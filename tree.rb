@@ -14,6 +14,7 @@ class Tree
     
     @root = new_node.sorted_array_to_BST(sorted_arr)
     new_node.pre_order(@root)
-
+    
+    puts "\nroot of this tree is: #{@root.data}"
   end
 end
