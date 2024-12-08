@@ -7,20 +7,31 @@ class Node
     @right = right
   end
 
-  def sorted_arr_to_BST(arr, first, last)
+  def sorted_arr_to_BST_recur(arr, first, last)
     return nil if first > last
 
     mid = first + (last - first) / 2
 
     root = Node.new(arr[mid])
 
-    root.left = sorted_arr_to_BST(arr, first, mid - 1)
+    root.left = sorted_arr_to_BST_recur(arr, first, mid - 1)
 
-    root.right = sorted_arr_to_BST(arr, mid + 1, last)
+    root.right = sorted_arr_to_BST_recur(arr, mid + 1, last)
 
     return root
   end
 
-  def sorted
+  def sorted_array_to_BTS(arr)
+    return sorted_arr_to_BST_recur(arr, 0, arr.size - 1)
+  end
+
+  def pre_order(root)
+    return if root.nil?
+    
+    puts root.data
+    pre_order(root.left)
+    pre_order(root.right)
+  end
+
 
 end
