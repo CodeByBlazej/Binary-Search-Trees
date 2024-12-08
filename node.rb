@@ -33,5 +33,30 @@ class Node
     pre_order(root.right)
   end
 
+  def insert(root, data)
+    if root == nil
+      return Node.new(data)
+    end
+
+    if root.data == data
+      return root
+    end
+
+    if data < root.data
+      root.left = insert(root.left, data)
+    elsif data > root.data
+      root.right = insert(root.right, data)
+    end
+
+    return root
+  end
+
+  def inorder(root)
+    if root != nil
+      inorder(root.left)
+      puts root.data
+      inorder(root.right)
+    end
+  end
 
 end
