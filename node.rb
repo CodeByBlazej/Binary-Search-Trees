@@ -21,13 +21,13 @@ class Node
     return root
   end
 
-  def sorted_array_to_BTS(arr)
+  def sorted_array_to_BST(arr)
     return sorted_arr_to_BST_recur(arr, 0, arr.size - 1)
   end
 
   def pre_order(root)
     return if root.nil?
-    
+
     puts root.data
     pre_order(root.left)
     pre_order(root.right)
