@@ -18,6 +18,12 @@ class Tree
     puts "\nroot of this tree is: #{@root.data}"
   end
 
+  def insert_node(data)
+    @root.insert(@root, data)
+    @root.inorder(@root)
+    @root.pre_order(@root)
+  end
+
   def pretty_print(node = @root, prefix = '', is_left = true)
     pretty_print(node.right, "#{prefix}#{is_left ? '│   ' : '    '}", false) if node.right
     puts "#{prefix}#{is_left ? '└── ' : '┌── '}#{node.data}"
