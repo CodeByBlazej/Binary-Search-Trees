@@ -8,7 +8,7 @@ class Tree
     @root = root
   end
 
-  def built_tree
+  def build_tree
     sorted_arr = @arr.sort.uniq
     new_node = Node.new(sorted_arr)
     
