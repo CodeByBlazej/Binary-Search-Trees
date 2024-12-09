@@ -59,4 +59,39 @@ class Node
     end
   end
 
+  def getSuccessor(curr)
+    curr = curr.right
+
+    while curr != nil && curr.left != nil
+      curr = curr.left
+    end
+
+    return curr
+  end
+
+  def del_node(root, x)
+    if root == nil
+      return root
+    end
+
+    if root.data > x
+      root.left = del_node(root.left, x)
+    elsif root.data < x
+      root.right = del_node(root.right, x)
+    else
+      if root.left == nil
+        return root.right
+      end
+
+      if root.right == nil
+        return root.left
+      end
+
+      succ = getSuccessor(root)
+      root.data = succ.data
+      root.right = del_node(root.right, succ.data)
+    end
+    
+    return root
+  end
 end
