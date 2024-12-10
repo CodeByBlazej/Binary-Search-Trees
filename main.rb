@@ -11,3 +11,6 @@ tree.pretty_print
 
 tree.insert_node(4568)
 tree.pretty_print
+
+tree.delete(9)
+tree.pretty_print
