@@ -94,4 +94,18 @@ class Node
     
     return root
   end
+
+  def find_node(root, x)
+    if root == nil
+      return
+    end
+
+    if root.data == x
+      puts root.data
+      return
+    end
+
+    find_node(root.left, x)
+    find_node(root.right, x)
+  end
 end
