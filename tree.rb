@@ -26,7 +26,10 @@ class Tree
 
   def delete(data)
     @root.del_node(@root, data)
-    
+  end
+
+  def find(data)
+    @root.find_node(@root, data)
   end
 
   def pretty_print(node = @root, prefix = '', is_left = true)
