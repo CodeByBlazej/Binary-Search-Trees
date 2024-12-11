@@ -108,4 +108,21 @@ class Node
     find_node(root.left, x)
     find_node(root.right, x)
   end
+
+  def lever_order(root)
+    arr = []
+
+    if root == nil
+      return
+    end
+
+    arr << yield(root.data)
+    while arr != nil
+      root.data = arr[0]
+      puts root.data
+      arr << root.left if root.left != nil
+      arr << root.right if root.right != nil
+      arr.shift
+    end
+  end
 end
