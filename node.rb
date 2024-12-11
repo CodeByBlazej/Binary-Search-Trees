@@ -109,7 +109,7 @@ class Node
     find_node(root.right, x)
   end
 
-  def lever_order(root)
+  def level_order(root)
     arr = []
 
     if root == nil
