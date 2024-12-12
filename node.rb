@@ -110,19 +110,33 @@ class Node
   end
 
   def level_order(root)
+    q = Array.new
     arr = []
+
+    # if block_given?
+    #   arr << yield(root.data)
+    #   while arr != nil
+    #     puts root.data
+    #     q << yield(root.left) if root.left != nil
+    #     q << yield(root.right) if root.left != nil
+    #     arr << q
+    #     q.shift
+    #   end
+    # end
 
     if root == nil
       return
     end
 
-    arr << yield(root.data)
-    while arr != nil
-      root.data = arr[0]
+    q.shift root.data
+    while q != []
+      root.data = q.last
       puts root.data
-      arr << root.left if root.left != nil
-      arr << root.right if root.right != nil
-      arr.shift
+      q.unshift root.left if root.left != nil
+      q.unshift root.right if root.right != nil
+      q.pop
     end
+    p q
   end
+
 end
