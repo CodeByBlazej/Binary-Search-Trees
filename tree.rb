@@ -34,6 +34,10 @@ class Tree
 
   def lever_order_
     @root.level_order(@root)
+
+    # @root.level_order(@root) do |node|
+    #   "%0.2f" % node
+    # end
   end
 
   def pretty_print(node = @root, prefix = '', is_left = true)
