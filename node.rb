@@ -109,18 +109,38 @@ class Node
     find_node(root.right, x)
   end
 
+  # Commented code is correct when used without block
   def level_order(root)
+    # queue = [root]
+    # result = []
+
+    # until queue.empty?
+    #   result << queue.first.data
+    #   queue << queue.first.left if queue.first.left != nil
+    #   queue << queue.first.right if queue.first.right != nil
+    #   queue.shift
+    # end
+
+    # puts result
+    # return result
+
     queue = [root]
     result = []
 
     until queue.empty?
-      result << queue.first.data
+      
+      if block_given?
+        result << yield(queue.first.data)
+      else
+        result << queue.first.data
+      end
+      
       queue << queue.first.left if queue.first.left != nil
       queue << queue.first.right if queue.first.right != nil
       queue.shift
     end
-    puts result
-    return result
+
+    p result
   end
 
 end
