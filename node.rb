@@ -130,7 +130,7 @@ class Node
     until queue.empty?
       
       if block_given?
-        result << yield(queue.first.data)
+        puts yield(queue.first.data)
       else
         result << queue.first.data
       end
@@ -140,7 +140,7 @@ class Node
       queue.shift
     end
 
-    p result
+    puts result unless block_given?
   end
 
 end
