@@ -20,8 +20,9 @@ class Tree
 
   def insert_node(data)
     @root.insert(@root, data)
-    @root.inorder(@root)
     @root.pre_order(@root)
+    @root.inorder(@root)
+    @root.post_order(@root)
   end
 
   def delete(data)
