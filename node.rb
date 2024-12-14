@@ -127,28 +127,46 @@ class Node
     puts result unless block_given?
   end
 
-  def pre_order(root)
+  def pre_order(root, result = [], &block)
     return if root.nil?
 
-    puts root.data
-    pre_order(root.left)
-    pre_order(root.right)
+    if block_given?
+      yield(root.data)
+    else
+      result << root.data
+    end
+    pre_order(root.left, result, &block)
+    pre_order(root.right, result, &block)
+
+    return result unless block_given?
   end
 
-  def inorder(root)
+  def inorder(root, result = [], &block)
     return if root.nil?
+
+    inorder(root.left, result, &block)
+    if block_given?
+      yield(root.data)
+    else
+      result << root.data
+    end
+    inorder(root.right, result, &block)
+
+    return result unless block_given?
+  end
+
+  def post_order(root, result = [], &block)
+    return if root.nil?
+
+    post_order(root.left, result, &block)
+    post_order(root.right, result, &block)
+    if block_given?
+      yield(root.data)
+    else
+      result << root.data
+    end
     
-    inorder(root.left)
-    puts root.data
-    inorder(root.right)
-  end
-
-  def post_order(root)
-    return if root.nil?
-
-    post_order(root.left)
-    post_order(root.right)
-    puts root.data     
+    return result unless block_given?   
   end
 
 end
