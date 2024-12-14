@@ -17,3 +17,7 @@ tree.pretty_print
 
 tree.find(324)
 tree.lever_order_
+tree.pre_order_
+tree.inorder_
+tree.post_order_
+tree.pretty_print
