@@ -169,4 +169,13 @@ class Node
     return result unless block_given?   
   end
 
+  def heigh(root, x, counter = 0)
+    return counter if root.left.nil? && root.right.nil? 
+    
+    new_root = x
+    heigh(new_root.right, x, counter += 1)
+
+
+  end
+
 end
