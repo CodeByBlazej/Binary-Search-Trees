@@ -36,9 +36,28 @@ class Tree
   def lever_order_
     @root.level_order(@root)
 
-    # @root.level_order(@root) do |node|
-    #   "%0.2f" % node
-    # end
+    # @root.level_order(@root) { |node| "%0.2f" % node }      
+  end
+
+  def pre_order_
+    result = @root.pre_order(@root)
+    puts result.inspect
+
+    @root.pre_order(@root) { |node| puts "%0.2f" % node }
+  end
+
+  def inorder_
+    result = @root.inorder(@root)
+    puts result.inspect
+
+    @root.inorder(@root) { |node| puts "%0.2f" % node }
+  end
+
+  def post_order_
+    result = @root.post_order(@root)
+    puts result.inspect
+
+    @root.post_order(@root) { |node| puts "%0.2f" % node}
   end
 
   def pretty_print(node = @root, prefix = '', is_left = true)
