@@ -25,14 +25,6 @@ class Node
     return sorted_arr_to_BST_recur(arr, 0, arr.size - 1)
   end
 
-  def pre_order(root)
-    return if root.nil?
-
-    puts root.data
-    pre_order(root.left)
-    pre_order(root.right)
-  end
-
   def insert(root, data)
     if root == nil
       return Node.new(data)
@@ -49,14 +41,6 @@ class Node
     end
 
     return root
-  end
-
-  def inorder(root)
-    if root != nil
-      inorder(root.left)
-      puts root.data
-      inorder(root.right)
-    end
   end
 
   def getSuccessor(curr)
@@ -141,6 +125,30 @@ class Node
     end
 
     puts result unless block_given?
+  end
+
+  def pre_order(root)
+    return if root.nil?
+
+    puts root.data
+    pre_order(root.left)
+    pre_order(root.right)
+  end
+
+  def inorder(root)
+    return if root.nil?
+    
+    inorder(root.left)
+    puts root.data
+    inorder(root.right)
+  end
+
+  def post_order(root)
+    return if root.nil?
+
+    post_order(root.left)
+    post_order(root.right)
+    puts root.data     
   end
 
 end
