@@ -22,3 +22,4 @@ tree.inorder_
 tree.post_order_
 tree.pretty_print
 tree.heigh_(4)
+tree.depth_(6)
