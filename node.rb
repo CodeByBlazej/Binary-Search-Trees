@@ -169,13 +169,26 @@ class Node
     return result unless block_given?   
   end
 
-  def heigh(root, x, counter = 0)
-    return counter if root.left.nil? && root.right.nil? 
-    
-    new_root = x
-    heigh(new_root.right, x, counter += 1)
+  def height(root)
+    return -1 if root.nil?
 
+    left_height = height(root.left)
+    right_height = height(root.right)
 
+    [left_height, right_height].max + 1
+  end
+
+  def height_of_node(root, x)
+    return -1 if root.nil?
+
+    if root.data == x
+      return height(root)
+    end
+
+    left_result = height_of_node(root.left, x)
+    return left_result if left_result != -1
+
+    height_of_node(root.right, x)
   end
 
 end
