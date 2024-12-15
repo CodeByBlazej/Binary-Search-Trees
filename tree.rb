@@ -64,6 +64,10 @@ class Tree
    puts @root.height_of_node(@root, data)    
   end
 
+  def depth_(data)
+    puts @root.depth(@root, data)
+  end
+
   def pretty_print(node = @root, prefix = '', is_left = true)
     pretty_print(node.right, "#{prefix}#{is_left ? '│   ' : '    '}", false) if node.right
     puts "#{prefix}#{is_left ? '└── ' : '┌── '}#{node.data}"
