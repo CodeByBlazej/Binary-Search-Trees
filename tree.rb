@@ -60,6 +60,10 @@ class Tree
     @root.post_order(@root) { |node| puts "%0.2f" % node}
   end
 
+  def heigh_(data)
+   puts @root.height_of_node(@root, data)    
+  end
+
   def pretty_print(node = @root, prefix = '', is_left = true)
     pretty_print(node.right, "#{prefix}#{is_left ? '│   ' : '    '}", false) if node.right
     puts "#{prefix}#{is_left ? '└── ' : '┌── '}#{node.data}"
