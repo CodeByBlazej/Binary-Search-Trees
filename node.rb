@@ -1,6 +1,6 @@
 class Node
   attr_accessor :data, :left, :right
-
+ 
   def initialize(data)
     @data = data
     @left = left
@@ -210,10 +210,17 @@ class Node
   end
 
   def balanced?(root)
-    left = height(root)
-    right = height(root)
+    return if root.nil?
 
-    if left != right
+    if root.left != nil
+      left = height(root.left)
+    end
+    
+    if root.right != nil
+      right = height(root.right)
+    end
+
+    if left - right 
       puts false
     end
 
