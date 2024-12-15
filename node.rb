@@ -209,5 +209,16 @@ class Node
     end
   end
 
+  def balanced?(root)
+    left = height(root)
+    right = height(root)
+
+    if left != right
+      puts false
+    end
+
+    puts true
+  end
+
 
 end
