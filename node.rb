@@ -191,4 +191,23 @@ class Node
     height_of_node(root.right, x)
   end
 
+  def depth(root, x)
+    return -1 if root.nil?
+
+    return 0 if root.data == x
+
+    if x < root.data
+      left_depth = depth(root.left, x)
+      return - 1 if left_depth == -1
+      return left_depth + 1
+    end
+
+    if x > root.data
+      right_depth = depth(root.right, x)
+      return -1 if right_depth == -1
+      return right_depth + 1
+    end
+  end
+
+
 end
