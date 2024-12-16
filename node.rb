@@ -210,20 +210,28 @@ class Node
   end
 
   def balanced?(root)
-    return if root.nil?
+    return true if root.nil?
 
-    if root.left != nil
-      left = height(root.left)
-    end
+    left = height(root.left)
+    right = height(root.right)
+    check = (left - right) > 1 || (right - left) > 1 
     
-    if root.right != nil
-      right = height(root.right)
-    end
-
-    if left - right 
+    if check == true
       puts false
+      return
     end
 
+   
+    
+    # if root.right != nil
+    #   right
+    # end
+    # if (left - right) > 1 && (right - left) > 1 
+    #   puts false
+    #   return
+    # end
+    balanced?(root.left)
+    balanced?(root.right) 
     puts true
   end
 
