@@ -223,5 +223,14 @@ class Node
     return false
   end
 
+  def traversal(arr)
+    sorted_array_to_BST(arr)
+  end
 
+  def rebalance(root)
+    sorted_arr = inorder(root)
+    sorted_array_no_duplicates = sorted_arr.uniq
+    new_root = traversal(sorted_array_no_duplicates)
+    new_root
+  end
 end
