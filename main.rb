@@ -24,6 +24,7 @@ tree.pretty_print
 tree.heigh_(4)
 tree.depth_(6)
 tree.balanced_?
+# new tree
 tree.rebalance_
 tree.pretty_print
 tree.balanced_?
