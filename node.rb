@@ -216,23 +216,11 @@ class Node
     right = height(root.right)
     check = (left - right) > 1 || (right - left) > 1 
     
-    if check == true
-      puts false
-      return
+    if check == false && balanced?(root.left) == true && balanced?(root.right) == true
+      return true
     end
 
-   
-    
-    # if root.right != nil
-    #   right
-    # end
-    # if (left - right) > 1 && (right - left) > 1 
-    #   puts false
-    #   return
-    # end
-    balanced?(root.left)
-    balanced?(root.right) 
-    puts true
+    return false
   end
 
 
