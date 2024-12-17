@@ -228,6 +228,8 @@ class Node
   end
 
   def rebalance(root)
+    return root if balanced?(root)
+    
     sorted_arr = inorder(root)
     sorted_array_no_duplicates = sorted_arr.uniq
     new_root = traversal(sorted_array_no_duplicates)
