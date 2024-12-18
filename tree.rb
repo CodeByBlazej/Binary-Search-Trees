@@ -43,21 +43,21 @@ class Tree
     result = @root.pre_order(@root)
     puts result.inspect
 
-    @root.pre_order(@root) { |node| puts "%0.2f" % node }
+    # @root.pre_order(@root) { |node| puts "%0.2f" % node }
   end
 
   def inorder_
     result = @root.inorder(@root)
     puts result.inspect
 
-    @root.inorder(@root) { |node| puts "%0.2f" % node }
+    # @root.inorder(@root) { |node| puts "%0.2f" % node }
   end
 
   def post_order_
     result = @root.post_order(@root)
     puts result.inspect
 
-    @root.post_order(@root) { |node| puts "%0.2f" % node}
+    # @root.post_order(@root) { |node| puts "%0.2f" % node}
   end
 
   def heigh_(data)

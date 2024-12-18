@@ -124,7 +124,7 @@ class Node
       queue.shift
     end
 
-    puts result unless block_given?
+    return result unless block_given?
   end
 
   def pre_order(root, result = [], &block)
