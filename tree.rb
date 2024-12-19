@@ -24,7 +24,7 @@ class Tree
   end
 
   def delete(data)
-    @root.del_node(@root, data)
+    @root.delete(@root, data)
   end
 
   def find(data)
