@@ -5,9 +5,9 @@ tree = Tree.new(Array.new(7) { rand(10..70) })
 tree.build_tree
 tree.pretty_print
 p tree.lever_order
-tree.pre_order
-tree.post_order
-tree.inorder
+puts tree.pre_order
+puts tree.post_order
+puts tree.inorder
 
 tree.insert_node(5)
 tree.insert_node(100)
@@ -20,9 +20,9 @@ tree.pretty_print
 puts tree.balanced?
 
 p tree.lever_order
-tree.pre_order
-tree.post_order
-tree.inorder
+puts tree.pre_order
+puts tree.post_order
+puts tree.inorder
 puts tree.heigh(5)
 puts tree.depth(5)
 
