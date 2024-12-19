@@ -1,3 +1,4 @@
+# Represents individual nodes in the tree and encaptulates node-level operations
 class Node
   attr_accessor :data, :left, :right
  

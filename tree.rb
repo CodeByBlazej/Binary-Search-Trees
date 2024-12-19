@@ -1,5 +1,6 @@
 require_relative 'node'
 
+# Manages the binary tree serving as the "orchestrator" that interacts with Node objects
 class Tree
   attr_accessor :arr, :root
 

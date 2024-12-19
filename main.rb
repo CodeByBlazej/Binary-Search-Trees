@@ -1,3 +1,4 @@
+# Main file, entry point to use Tree and Node classes. Tree is built, manipulated and displayed here
 require_relative 'tree'
 
 tree = Tree.new(Array.new(7) { rand(10..70) })
