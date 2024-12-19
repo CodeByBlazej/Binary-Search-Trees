@@ -39,21 +39,21 @@ class Tree
 
   def pre_order
     result = @root.pre_order(@root)
-    puts result.inspect
+    return result.inspect
 
     # @root.pre_order(@root) { |node| puts "%0.2f" % node }
   end
 
   def inorder
     result = @root.inorder(@root)
-    puts result.inspect
+    return result.inspect
 
     # @root.inorder(@root) { |node| puts "%0.2f" % node }
   end
 
   def post_order
     result = @root.post_order(@root)
-    puts result.inspect
+    return result.inspect
 
     # @root.post_order(@root) { |node| puts "%0.2f" % node}
   end
