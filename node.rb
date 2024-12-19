@@ -86,11 +86,12 @@ class Node
     end
 
     if root.data == x
-      puts root.data
-      return
+      return root.data
     end
 
-    find_node(root.left, x)
+    left_result = find_node(root.left, x)
+    return left_result if left_result
+
     find_node(root.right, x)
   end
 
