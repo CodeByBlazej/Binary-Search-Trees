@@ -21,9 +21,6 @@ class Tree
 
   def insert_node(data)
     @root.insert(@root, data)
-    @root.pre_order(@root)
-    @root.inorder(@root)
-    @root.post_order(@root)
   end
 
   def delete(data)
@@ -34,46 +31,46 @@ class Tree
     @root.find_node(@root, data)
   end
 
-  def lever_order_
+  def lever_order
     @root.level_order(@root)
 
     # @root.level_order(@root) { |node| "%0.2f" % node }      
   end
 
-  def pre_order_
+  def pre_order
     result = @root.pre_order(@root)
     puts result.inspect
 
     # @root.pre_order(@root) { |node| puts "%0.2f" % node }
   end
 
-  def inorder_
+  def inorder
     result = @root.inorder(@root)
     puts result.inspect
 
     # @root.inorder(@root) { |node| puts "%0.2f" % node }
   end
 
-  def post_order_
+  def post_order
     result = @root.post_order(@root)
     puts result.inspect
 
     # @root.post_order(@root) { |node| puts "%0.2f" % node}
   end
 
-  def heigh_(data)
-   puts @root.height_of_node(@root, data)    
+  def heigh(data)
+    @root.height_of_node(@root, data)    
   end
 
-  def depth_(data)
-    puts @root.depth(@root, data)
+  def depth(data)
+    @root.depth(@root, data)
   end
 
-  def balanced_?
+  def balanced?
     @root.balanced?(@root)
   end
 
-  def rebalance_
+  def rebalance
     @root = @root.rebalance(@root)
   end
 
